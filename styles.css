@@ -21,7 +21,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  background-image: url('assets/make_it_rain_2.gif');
+  background-image: url('assets/Jackson_Dancer copy.gif');
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
@@ -29,16 +29,11 @@ body, a:link, a:visited, a:active{
 }
 
 .background {
-  background-image: url('assets/dance_floor.jpg');
+  background-image: url('assets/dance_floor copy.jpg');
   background-size: cover;
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-}
-
-.make_it_rain_1 {
-  background-image: url('assets/make_it_rain_1.gif');
-  position:absolute;
 }
