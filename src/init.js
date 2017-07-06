@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // $('audio').get(0).play();
   window.dancers = [];
 
   $('.addDancerButton').on('click', function(event) {
@@ -15,6 +16,26 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
+    console.log($(this).data('dancer-maker-function-name')); 
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+
+    // get the maker function for the kind of dancer we're supposed to make
+    var dancerMakerFunction = window[dancerMakerFunctionName];
+    // console.log(dancerMakerFunction)
+
+    // make a dancer with a random position
+
+    var dancer = new dancerMakerFunction(
+      $("body").height() * (2 / 4),
+      $(".background").width() * Math.random(),
+      Math.random() * 1000
+    );
+    window.dancers.push(dancer);
+    $('.background').append(dancer.$node);
+  });
+
+  $('.addMoonWalkerButton').on('click', function(event) {
+    console.log($(this).data('dancer-maker-function-name'));
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
@@ -23,14 +44,18 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $(".background").height() * Math.random(),
+      $("body").height() * (2 / 4),
       $(".background").width() * Math.random(),
-      Math.random() * 100
+      Math.random() * 1000
     );
+    console.log(dancer)
     window.dancers.push(dancer);
     $('.background').append(dancer.$node);
-  });
 
-  console.log(window.dancers)
+    for(let i = 0; i < (9/ $(".background").width()); i++) {
+
+
+    }
+  });
 });
 
